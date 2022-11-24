@@ -34,11 +34,11 @@ def Register():
     Reg.iconbitmap('img/reglogo.ico')
     
    
-    top_frame = Label(Reg, text='Registration',font = ('Cosmic', 25, 'bold'), bg='#7268A6',relief='groove',padx=500, pady=30)
+    top_frame = Label(Reg, text='Registration',font = ('Cosmic', 25, 'bold'), bg='#7268A6',relief='groove',padx=600, pady=30)
     top_frame.pack(side='top')
     
    
-    frame = LabelFrame(Reg, padx=400, pady=100, bg='white')
+    frame = LabelFrame(Reg, padx=50, pady=10, bg='white')
     frame.place(relx = 0.5, rely = 0.55, anchor = CENTER)
     
     
@@ -130,36 +130,36 @@ def Register():
             ms.showerror('Oops', 'Please Fill All The Input Fields')
     
    
-    name = tk.Label(frame, text = 'Full Name', font=('Arial',10, 'bold'), bg='white', fg='green')
-    email = tk.Label(frame, text = 'Email', font=('Arial',10, 'bold'), bg='white', fg='green')
-    mobile = tk.Label(frame, text = 'Mobile No.', font=('Arial',10, 'bold'), bg='white', fg='green')
-    username = tk.Label(frame, text = 'Username', font=('Arial',10, 'bold'), bg='white', fg='green')                    
-    password = tk.Label(frame, text = 'Password', font = ('Arial',10,'bold'), bg='white', fg='green')
-    confirm = tk.Label(frame, text = 'Confirm Password', font=('Arial',10, 'bold'), bg='white', fg='green')
-    mob1 = tk.Label(frame, text = 'mob1', font = ('Arial',10,'bold'), bg='white', fg='green')
-    mob2 = tk.Label(frame, text = 'mob2', font=('Arial',10, 'bold'), bg='white', fg='green')
+    name = tk.Label(frame, text = 'Full Name', font=('Arial',10, 'bold'), bg='white', fg='black')
+    email = tk.Label(frame, text = 'Email', font=('Arial',10, 'bold'), bg='white', fg='black')
+    mobile = tk.Label(frame, text = 'Mobile No.', font=('Arial',10, 'bold'), bg='white',fg='black')
+    username = tk.Label(frame, text = 'Username', font=('Arial',10, 'bold'), bg='white', fg='black')                    
+    password = tk.Label(frame, text = 'Password', font = ('Arial',10,'bold'), bg='white', fg='black')
+    confirm = tk.Label(frame, text = 'Confirm Password', font=('Arial',10, 'bold'), bg='white', fg='black')
+    mob1 = tk.Label(frame, text = 'mob1', font = ('Arial',10,'bold'), bg='white', fg='black')
+    mob2 = tk.Label(frame, text = 'mob2', font=('Arial',10, 'bold'), bg='white',fg='black')
   
     
 
     
-    name_entry = tk.Entry(frame ,font=('Arial',10,'normal'), bg='#FBB13C')
+    name_entry = tk.Entry(frame ,width=40,font=('Arial',10,'normal'), bg='#7268A6')
     name_entry.bind("<Return>", database)
-    email_entry = tk.Entry(frame,font=('Arial',10,'normal'), bg='#FBB13C')
+    email_entry = tk.Entry(frame,width=40,font=('Arial',10,'normal'),bg='#7268A6')
     email_entry.bind("<Return>",database)
-    mobile_entry = tk.Entry(frame,font=('Arial',10,'normal'), bg='#FBB13C')
+    mobile_entry = tk.Entry(frame,width=40,font=('Arial',10,'normal'), bg='#7268A6')
     mobile_entry.bind("<Return>",database)
-    username_entry = tk.Entry(frame,font=('Arial',10,'normal'), bg='#FBB13C')
+    username_entry = tk.Entry(frame,width=40,font=('Arial',10,'normal'), bg='#7268A6')
     username_entry.bind("<Return>",database)
-    password_entry=tk.Entry(frame, font = ('Arial',10,'normal'), show = '*', bg='#FBB13C')
+    password_entry=tk.Entry(frame,width=40, font = ('Arial',10,'normal'), show = '*', bg='#7268A6')
     password_entry.bind("<Return>",database)
-    confirm_entry=tk.Entry(frame, font = ('Arial',10,'normal'), show = '*', bg='#FBB13C')
+    confirm_entry=tk.Entry(frame,width=40, font = ('Arial',10,'normal'), show = '*',bg='#7268A6')
     confirm_entry.bind("<Return>",database)
-    mob1_entry=tk.Entry(frame, font = ('Arial',10,'normal'),bg='#FBB13C')
+    mob1_entry=tk.Entry(frame,width=40, font = ('Arial',10,'normal'),bg='#7268A6')
     mob1_entry.bind("<Return>",database)
-    mob2_entry=tk.Entry(frame, font = ('Arial',10,'normal'),bg='#FBB13C')
+    mob2_entry=tk.Entry(frame,width=40, font = ('Arial',10,'normal'),bg='#7268A6')
     mob2_entry.bind("<Return>",database)
    
-
+    
        
     
     submit=tk.Button(frame,text = 'Register', command = database, width="10",bd = '3',  font = ('Times', 10, 'bold'),bg='#581845', fg='white',relief='groove', justify = 'center', pady='5'  ) 
@@ -225,4 +225,4 @@ def Register():
     
 
     Quit = tk.Button(Reg, text = "Quit", width="10", command = Reg.destroy, bd = '3',  font = ('Times', 10, 'bold'), bg='black', fg='white',relief='groove', justify = 'center', pady='5')
-    Quit.place(anchor ='sw',rely=1,relx=0.84)
+    Quit.place(anchor ='sw',rely=2,relx=0.84)

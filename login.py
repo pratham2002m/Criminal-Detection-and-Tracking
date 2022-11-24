@@ -119,13 +119,13 @@ def Log():
                 ms.showerror('Oops','User Not Found !! Check Username and Password Again !!')
 
 
-    username = tk.Label(frame, text = 'Username',font=('Arial',15, 'bold'),bg='white', fg='green')
-    password = tk.Label(frame, text = 'Password', font = ('Arial',15,'bold'),bg='white', fg='green')   
+    username = tk.Label(frame, text = 'Username',font=('Arial',15, 'bold'),bg='white', fg='black')
+    password = tk.Label(frame, text = 'Password', font = ('Arial',15,'bold'),bg='white', fg='black')   
 
    
-    username_entry = tk.Entry(frame, font=('calibre',15,'normal'), justify = 'center', bg='#FBB13C')
+    username_entry = tk.Entry(frame, font=('calibre',15,'normal'), justify = 'center', bg='#7268A6')
     username_entry.bind('<Return>', Search)
-    password_entry=tk.Entry(frame, font = ('calibre',15,'normal'), show = '*', justify = 'center', bg='#FBB13C') 
+    password_entry=tk.Entry(frame, font = ('calibre',15,'normal'), show = '*', justify = 'center', bg='#7268A6') 
     password_entry.bind('<Return>', Search)
     
  

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRIM</title>
+</head>
+<body>
+
+    <h1>{{request.user}}</h1>
+    <a href="{% url 'letsout'  %}">Logout</a>
+
+
+
+<div class ="row">
+ <div class="col-sm-5">
+<h3 class="text-center alert alert-info">Update Criminal</h3>
+
+<form method="POST"  enctype="multipart/form-data" action="">
+{% csrf_token %}
+{{formx.as_p}}
+<input type="submit" class="btn btn-success" value="Add">
+</form>
+
+</div>
+</div>
+<br>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

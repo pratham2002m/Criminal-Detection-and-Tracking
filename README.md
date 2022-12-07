@@ -27,6 +27,9 @@
 ### Alert notification using SMTP
 ### Criminal Data storage using Firebase Database
 
+## Requirement 
+### Python version 3.6
+
 
 ## Procedure to add camera :
 

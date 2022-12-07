@@ -30,6 +30,7 @@
 ## Requirement 
 ### Python version 3.6
 
+## For demo purpose you can download IP webcam app from playstore and use IP address provided by it (Make sure that both devices are on same wifi)
 
 ## Procedure to add camera :
 

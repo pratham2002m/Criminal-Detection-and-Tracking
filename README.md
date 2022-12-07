@@ -25,7 +25,7 @@
 ### Face Recognition using SVC,  SKLearn,  Keras
 ### GPU using Google Colab, Tensorflow
 ### Alert notification using SMTP
-### Criminal Data storage using Firebase Database
+### Criminal Data storage using sqlite database
 
 ## Requirement 
 ### Python version 3.6

@@ -682,12 +682,22 @@ def recognize(pil_im,face_pixels,shapes) :
     # print("maxi = ",maxi)
     
 
-    if class_probability > 99 and maxi > 100 :
+    
+    
+
+    if maxi/class_probability > 10 :
+      
+      print(f'Predicted: {predict_names[0]} {class_probability:.3f}')
 
       if predict_names[0] not in criminals : 
+
+        pyplot.imshow(face_pixels[i])
+        title = f'{predict_names[0]} {class_probability:.3f} {maxi}'
+        pyplot.title(title)
+        pyplot.show()
+
         criminals.append(predict_names[0])
 
-      # print(f'Predicted: {predict_names[0]} {class_probability:.3f}')
 
 
 
@@ -698,11 +708,12 @@ def recognize(pil_im,face_pixels,shapes) :
 
       
       
-      pyplot.imshow(face_pixels[i])
+      # pyplot.imshow(face_pixels[i])
       title = f'{predict_names[0]} {class_probability:.3f} {maxi}'
+      print(title)
       # print("images 2 : ")
-      pyplot.title(title)
-      pyplot.show()
+      # pyplot.title(title)
+      # pyplot.show()
     # else : 
     #   print(f'Predicted: Unknown {predict_names[0]} {class_probability:.3f} {maxi}')
     #   pyplot.imshow(face_pixels[i])
@@ -719,12 +730,13 @@ import cv2
 import numpy as np
  
 # Create a VideoCapture object and read from input file
-# cap = cv2.VideoCapture(str(os.getcwd()) + '/video.mp4')
+# cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("https://10.40.12.251:8080/video")
 # cap = cv2.VideoCapture('rtsp://student:student123@192.168.3.12')
 
 def runCam(cam) :
 
-  cap = cv2.VideoCapture(str(cam[2]))
+  # cap = cv2.VideoCapture(str(cam[2]))
 
 
   # fps = int(cap.get(cv2.CAP_PROP_FPS))
@@ -751,7 +763,7 @@ def runCam(cam) :
         frame_count += 1
 
         # if frame_count % (fps * save_interval) == 0 :
-        if (datetime.now().second%6 == 0) :
+        if (datetime.now().second%2 == 0) :
           cv2.imwrite(str(os.getcwd()) + f'/images/{frame_count}.jpg',frame)
           pil_im = Image.fromarray(frame)
           fs = extract_face(pil_im)

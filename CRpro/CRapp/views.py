@@ -70,7 +70,7 @@ def sign_police(request):
 
 # logout  of police❤️............................................................................... #
 
-@police_required
+
 def letsout(request):
     logout(request)
     return render(request, 'index.html')
@@ -137,10 +137,8 @@ def update_police_data(request):
 
 from django.views.decorators.csrf import csrf_exempt
 
-
 @csrf_exempt 
 def add_criminal(request):
-  if request.user.is_authenticated:
     if request.method=='POST':
         fm=criminalReg(request.POST,request.FILES)
         print('all not kkk............')
@@ -159,7 +157,7 @@ def add_criminal(request):
     else:
         fm=criminalReg()
         stud=criminalModel.objects.all()
-    return render(request,'add_criminal.html',{'formx':fm,'stu':stud })
+        return render(request,'add_criminal.html',{'formx':fm,'stu':stud })
 
 
 
@@ -179,7 +177,6 @@ def profile_police(request):
 
 # show criminal data❤️.......................................................................#
 
-@police_required
 def show_crim(request):
     crim_data = crimModel.objects.all()
     sp = {
@@ -191,7 +188,7 @@ def show_crim(request):
 
 
 # show the criminal data❤️.......................................................................#
-@police_required
+
 def showdata(request,id):
     crim_data = crimModel.objects.get(crims_id=id)
     sp = {
@@ -209,7 +206,7 @@ def showdata(request,id):
 
 
 # update the criminal data❤️.......................................................................#
-@police_required
+
 def updatedata(request,id):
     if request.method=='POST':
         pi=crimModel.objects.get(crims_id=id)
@@ -225,7 +222,7 @@ def updatedata(request,id):
 
 
 # delete the criminal data❤️.......................................................................#
-@police_required
+
 def deletedata(request,id):
     if request.method=='POST':
         dlt=crimModel.objects.get(crims_id=id)
@@ -236,7 +233,7 @@ def deletedata(request,id):
 
 
 # search the criminal by crim_id❤️.......................................................................#
-@police_required
+
 def search(request):
     if 'q' in request.GET:
         q = request.GET['q']
@@ -324,7 +321,7 @@ def orgDetailsAPI(request,id):
 
 
 ########################################################################################################
-@police_required
+
 @api_view(['GET'])
 def crimAPI(request):
     products = crimModel.objects.all()
@@ -332,14 +329,14 @@ def crimAPI(request):
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-@police_required
+
 @api_view(['GET'])
 def crimDetailsAPI(request,id):
     products = crimModel.objects.get(crims_id=id)
     serializer = CrimSerializer(products, many=False)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
-@police_required
+
 @api_view(['PUT'])
 def editCrimAPI(request,id):
     
@@ -409,7 +406,7 @@ def editCrimAPI(request,id):
         # serializer.data['longt4']=serializer.data['longt4']
 
 
-@police_required
+
 @csrf_exempt 
 def add_crim(request):
     if request.method=='POST':
